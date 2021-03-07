@@ -27,12 +27,17 @@ function checkReport(cookie) {
             "Referer": "https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html"
         }
     }).then(function (response) {
-        console.log(response.data)
         if (response.data.data.appliedTimes === 0) {
+            console.log("今日体温暂未上报，尝试上报体温中")
             reportBodyTemperature(cookie)
+        } else {
+            console.log("今日体温已上报")
         }
+        // console.log(response.data)
     }, function (err) {
+        console.log("获取信息失败")
         console.log("err", err)
+
     })
 }
 
@@ -61,9 +66,10 @@ function reportBodyTemperature(cookie) {
             "Referer": "https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html"
         }
     }).then(function (response) {
-        console.log(response.data)
-
+        console.log("已成功上报体温")
+        // console.log(response.data)
     }, function (err) {
+        console.log("上报体温失败")
         console.log("err", err)
     })
 }
