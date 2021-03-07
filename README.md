@@ -18,7 +18,7 @@
  -  启动Action，运行结果在```build```的```Run Main```展示
   
 ## 注意事项
- - 每日自动签到时间是早上7点
+ - 每日自动上报时间是早上7点
  - 点击```Run workflow```可以手动触发Action
  - 可以设置多个Cookie，以#隔开，如Cookie1#Cookie2#Cookie3
  -  **Cookie失效时间未知**
