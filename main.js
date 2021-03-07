@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 let args = process.argv.splice(2)
 result = args[0].split("#");
 console.log(result)
@@ -5,6 +7,7 @@ console.log(result)
 for (let cookie of result) {
     checkReport(cookie)
 }
+
 
 function checkReport(cookie) {
     axios({
