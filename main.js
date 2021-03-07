@@ -4,9 +4,9 @@ let args = process.argv.splice(2)
 result = args[0].split("#");
 
 
-for (let cookie of result) {
-    console.log('当前用户Cookie：',cookie)
-    checkReport(cookie)
+for (let userNum in result) {
+    console.log(`准备上报第${userNum+1}位学生`)
+    checkReport(result[userNum])
 }
 
 
@@ -29,7 +29,6 @@ function checkReport(cookie) {
         }
     }).then(function (response) {
         if (response.data.data.appliedTimes === 0) {
-            console.log("今日体温暂未上报，尝试上报体温中")
             reportBodyTemperature(cookie)
         } else {
             console.log("今日体温已上报")
