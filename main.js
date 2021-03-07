@@ -5,7 +5,7 @@ result = args[0].split("#");
 
 
 for (let userNum in result) {
-    console.log(`准备上报第${userNum+1}位学生`)
+    console.log(`准备上报第${parseInt(userNum)+1}位学生`)
     checkReport(result[userNum])
 }
 
