@@ -12,16 +12,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - name: Checkout Main
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     
-   	# 设置node版本
+    # 配置node
     - name: Set Node Version
       uses: actions/setup-node@v1
     
@@ -30,4 +25,4 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
       
     - name: Run Main
-      run: node ${{ secrets.cookie }}
+      run: node ${{ secrets.COOKIE }}
