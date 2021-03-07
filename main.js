@@ -2,9 +2,10 @@ const axios = require('axios')
 
 let args = process.argv.splice(2)
 result = args[0].split("#");
-console.log(result)
+
 
 for (let cookie of result) {
+    console.log('当前用户Cookie：',cookie)
     checkReport(cookie)
 }
 
