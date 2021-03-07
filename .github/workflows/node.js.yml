@@ -1,0 +1,33 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+on:
+  workflow_dispatch: # 手动触发
+  schedule: # 计划任务触发
+    - cron: "0 22 * * *" # cron表达式，Actions时区是UTC时间，所以要往前推8个小时
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Checkout Main
+      uses: actions/checkout@v1
+    
+   	# 设置node版本
+    - name: Set Node Version
+      uses: actions/setup-node@v1
+    
+    # 设置服务器时区为东八区 
+    - name: Set Time Zone
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+      
+    - name: Run Main
+      run: node ${{ secrets.cookie }}
