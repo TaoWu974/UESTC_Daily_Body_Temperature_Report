@@ -1,0 +1,22 @@
+{
+  "name": "uestc_daily_body_temperature_report",
+  "version": "1.0.0",
+  "description": "你猜",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChanIok/UESTC_Daily_Body_Temperature_Report.git"
+  },
+  "author": "ChanIok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChanIok/UESTC_Daily_Body_Temperature_Report/issues"
+  },
+  "homepage": "https://github.com/ChanIok/UESTC_Daily_Body_Temperature_Report#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
