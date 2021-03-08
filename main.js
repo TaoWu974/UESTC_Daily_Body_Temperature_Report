@@ -51,7 +51,7 @@ function reportBodyTemperature(cookie) {
             "todayMorningTemperature": "36°C~36.5°C",
             "yesterdayEveningTemperature": "36°C~36.5°C",
             "yesterdayMiddayTemperature": "36°C~36.5°C",
-            "location": "四川省成都市郫都区成灌高速公路"
+            "location": "四川省成都市郫都区银杏大道"
         },
         headers: {
             'content-type': 'application/json',
