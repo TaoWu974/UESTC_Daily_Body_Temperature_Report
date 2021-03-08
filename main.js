@@ -2,7 +2,7 @@ const axios = require('axios')
 
 let args = process.argv.splice(2)
 result = args[0].split("#");
-console.log(result)
+
 
 for (let userNum in result) {
     console.log(`准备上报第${parseInt(userNum)+1}位学生`)
