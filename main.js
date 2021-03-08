@@ -55,7 +55,7 @@ function reportBodyTemperature(cookie) {
         },
         headers: {
             'content-type': 'application/json',
-            "User-Agent": "Mozilla / 5.0(Linux; Android 9; G8441 Build / 47.2.A .6 .30; wv) AppleWebKit / 537.36(KHTML, like Gecko) Version / 4.0 Chrome / 66.0 .3359 .158 Mobile Safari / 537.36 MicroMessenger / 7.0 .13 .1640(0x27000D39) Process / appbrand3 NetType / WIFI Language / zh_CN ABI / arm64 WeChat / arm64",
+            "User-Agent": "Mozilla / 5.0(Linux; Android 10; LIO-AN00 Build/HUAWEILIO-AN00; wv) AppleWebKit / 537.36(KHTML, like Gecko) Version / 4.0 Chrome / 66.0 .3359 .158 Mobile Safari / 537.36 MicroMessenger / 7.0 .13 .1640(0x27000D39) Process / appbrand3 NetType / WIFI Language / zh_CN ABI / arm64 WeChat / arm64",
             "Accept-Encoding": "gzip, compress, br, deflate",
             "Content-Length": "220",
             "encode": false,
