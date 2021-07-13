@@ -5,12 +5,12 @@ result = args[0].split("#");
 
 
 for (let userNum in result) {
-    console.log(`准备上报第${parseInt(userNum)+1}位学生`);
-    checkReport(result[userNum]);
+    console.log(`第${parseInt(userNum)+1}位学生：准备上报`);
+    checkReport(result[userNum], userNum);
 }
 
 
-function checkReport(cookie) {
+function checkReport(cookie, userNum) {
     axios({
         url: "https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew",
         method: "get",
@@ -29,9 +29,9 @@ function checkReport(cookie) {
         }
     }).then((res) => {
         if (res.data.data.appliedTimes === 0) {
-            reportBodyTemperature(cookie);
+            reportBodyTemperature(cookie, userNum);
         } else {
-            console.log("今日体温已上报");
+            console.log(`第${parseInt(userNum)+1}位学生：今日体温已上报`);
         }
     }).catch((err) => {
         console.log("获取信息失败");
@@ -40,7 +40,7 @@ function checkReport(cookie) {
 }
 
 
-function reportBodyTemperature(cookie) {
+function reportBodyTemperature(cookie, userNum) {
     axios({
         url: "https://jzsz.uestc.edu.cn/wxvacation/monitorRegisterForReturned",
         method: "post",
@@ -64,9 +64,9 @@ function reportBodyTemperature(cookie) {
             "Referer": "https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html"
         }
     }).then(function (res) {
-        console.log("已成功上报体温");
+        console.log(`第${parseInt(userNum)+1}位学生：已成功上报体温`);
     }).catch((err) => {
-        console.log("上报体温失败");
+        console.log(`第${parseInt(userNum)+1}位学生：上报体温失败`);
         console.log("err", err);
     })
 }
