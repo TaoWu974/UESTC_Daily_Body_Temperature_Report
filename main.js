@@ -1,7 +1,14 @@
-const axios = require("axios")
+const axios = require("axios");
 
-let args = process.argv.splice(2)
+// 获取输入的cookie
+let args = process.argv[2];
 result = args[0].split("#");
+// 获取输入的location
+let location = process.argv[3];
+if (typeof (location) === "undefined") {
+    location = "四川省成都市郫都区银杏大道";
+}
+
 
 
 for (let userNum in result) {
@@ -49,7 +56,7 @@ function reportBodyTemperature(cookie, userNum) {
             "todayMorningTemperature": "36°C~36.5°C",
             "yesterdayEveningTemperature": "36°C~36.5°C",
             "yesterdayMiddayTemperature": "36°C~36.5°C",
-            "location": "四川省成都市郫都区银杏大道"
+            "location": location
         },
         headers: {
             "content-type": "application/json",

@@ -17,6 +17,7 @@
 - `Fork`此仓库
 - 在自己的项目界面，点击 `Settings`-->`Secrets`-->`New secret Secrets`
 - 创建`COOKIE`，把你抓到的`Cookie`粘贴到`Value`中
+- 同时创建`LOCATION`，输入你签到需要定位的位置
 - 启动 Action，运行结果在`build`的`Run Main`展示
 
 ## 注意事项
