@@ -34,7 +34,6 @@ function checkReport(cookie, userNum) {
             "Referer": "https://servicewechat.com/wx521c0c16b77041a0/29/page-frame.html"
         }
     }).then((res) => {
-        console.log(res.data);
         if (res.data.data.appliedTimes === 0) {
             reportBodyTemperature(cookie, userNum);
         } else {
