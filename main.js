@@ -2,7 +2,7 @@ const axios = require("axios");
 
 // 获取输入的cookie
 let args = process.argv[2];
-result = args[0].split("#");
+result = args.split("#");
 // 获取输入的location
 let location = process.argv[3];
 if (typeof (location) === "undefined") {
@@ -25,16 +25,16 @@ function checkReport(cookie, userNum) {
         headers: {
             "content-type": "application/json",
             "User-Agent": "Mozilla / 5.0(Linux; Android 10; LIO-AN00 Build/HUAWEILIO-AN00; wv) AppleWebKit / 537.36(KHTML, like Gecko) Version / 4.0 Chrome / 66.0 .3359 .158 Mobile Safari / 537.36 MicroMessenger / 7.0 .13 .1640(0x27000D39) Process / appbrand3 NetType / WIFI Language / zh_CN ABI / arm64 WeChat / arm64",
-            "Accept-Encoding": "gzip, compress, br, deflate",
-            "Content-Length": "2",
+            "Accept-Encoding": "gzip, deflate, br",
             "encode": false,
             "Connection": "keep-alive",
-            "x-tag": "flyio",
+            "X-Tag": "flyio",
             "charset": "utf-8",
-            "cookie": cookie,
-            "Referer": "https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html"
+            "Cookie": cookie,
+            "Referer": "https://servicewechat.com/wx521c0c16b77041a0/29/page-frame.html"
         }
     }).then((res) => {
+        console.log(res.data);
         if (res.data.data.appliedTimes === 0) {
             reportBodyTemperature(cookie, userNum);
         } else {
@@ -61,16 +61,17 @@ function reportBodyTemperature(cookie, userNum) {
         headers: {
             "content-type": "application/json",
             "User-Agent": "Mozilla / 5.0(Linux; Android 10; LIO-AN00 Build/HUAWEILIO-AN00; wv) AppleWebKit / 537.36(KHTML, like Gecko) Version / 4.0 Chrome / 66.0 .3359 .158 Mobile Safari / 537.36 MicroMessenger / 7.0 .13 .1640(0x27000D39) Process / appbrand3 NetType / WIFI Language / zh_CN ABI / arm64 WeChat / arm64",
-            "Accept-Encoding": "gzip, compress, br, deflate",
+            "Accept-Encoding": "gzip, deflate, br",
             "Content-Length": "220",
             "encode": false,
             "Connection": "keep-alive",
-            "x-tag": "flyio",
+            "X-Tag": "flyio",
             "charset": "utf-8",
-            "cookie": cookie,
-            "Referer": "https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html"
+            "Cookie": cookie,
+            "Referer": "https://servicewechat.com/wx521c0c16b77041a0/29/page-frame.html"
         }
     }).then(function (res) {
+        console.log(res.data);
         console.log(`第${parseInt(userNum)+1}位学生：已成功上报体温`);
     }).catch((err) => {
         console.log(`第${parseInt(userNum)+1}位学生：上报体温失败`);
