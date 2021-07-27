@@ -70,7 +70,6 @@ function reportBodyTemperature(cookie, userNum) {
             "Referer": "https://servicewechat.com/wx521c0c16b77041a0/29/page-frame.html"
         }
     }).then(function (res) {
-        console.log(res.data);
         console.log(`第${parseInt(userNum)+1}位学生：已成功上报体温`);
     }).catch((err) => {
         console.log(`第${parseInt(userNum)+1}位学生：上报体温失败`);
